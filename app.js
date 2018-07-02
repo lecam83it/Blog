@@ -2,7 +2,7 @@ var express = require('express');
 var config = require('config');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
+var path = require('path');
 
 // import moduls
 var controllers = require('./apps/controllers');
@@ -20,7 +20,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
 // set views engine
-app.set('/views', express.static(__dirname + '/asdsadsapps/views'));
+app.set('views', (__dirname + '/apps/views'));
 app.set('view engine', 'ejs');
 //use assets
 app.use('/public', express.static(__dirname + '/public'));
